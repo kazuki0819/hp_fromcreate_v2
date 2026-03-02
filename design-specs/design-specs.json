@@ -1,0 +1,522 @@
+{
+    "version": "1.0",
+    "project": "FROM CREATE HP Redesign",
+    "created": "2026-03-02",
+    "baseDesign": "レトロゲーム風（Retro Game / Pixel Art Style）",
+    "currentStack": {
+        "framework": "Next.js 16",
+        "css": "Vanilla CSS (globals.css)",
+        "fonts": [
+            "DotGothic16",
+            "Noto Sans JP"
+        ],
+        "primaryColor": "#00ff41"
+    },
+    "proposals": [
+        {
+            "id": 1,
+            "name": "Cyber Noir",
+            "nameJa": "黄金サイバーノワール",
+            "mockup": "01_cybernoir.png",
+            "concept": "レトロなブラウン管の暖かみと、ゴールド×ネイビーの高級感を融合。深夜のアーケードバーのような落ち着いた大人のレトロ感。",
+            "atmosphere": "落ち着いた大人",
+            "gameFeeling": 3,
+            "luxuryFeeling": 5,
+            "implementationDifficulty": 3,
+            "cssVariables": {
+                "--bg": "#0a0f1e",
+                "--bg-elevated": "#0f1428",
+                "--bg-card": "#141832",
+                "--text": "#e8e0d0",
+                "--text-muted": "#8a8270",
+                "--text-dim": "#5a5245",
+                "--accent": "#FFD700",
+                "--accent2": "#FFA500",
+                "--accent3": "#7B2FBE",
+                "--accent-glow": "rgba(255, 215, 0, 0.4)",
+                "--accent2-glow": "rgba(255, 165, 0, 0.4)",
+                "--accent3-glow": "rgba(123, 47, 190, 0.4)",
+                "--border": "#FFD700",
+                "--border-dim": "#2a2520",
+                "--radius": "0px",
+                "--shadow": "4px 4px 0px rgba(255, 215, 0, 0.2)",
+                "--shadow-lg": "6px 6px 0px rgba(255, 215, 0, 0.3)",
+                "--transition": "0.2s steps(4)",
+                "--transition-smooth": "0.3s ease"
+            },
+            "fonts": {
+                "heading": "\"DotGothic16\", monospace",
+                "body": "\"Noto Sans JP\", sans-serif",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "グラスモーフィズムのフロストガラスナビバー：backdrop-filter: blur(20px)",
+                "CRTモニターフレーム風の装飾枠（CSS border-image）",
+                "金属光沢グラデーションのベベル3Dボタン",
+                "スキャンラインを opacity: 0.03 まで控えめに",
+                "ゴールドパーティクル背景（CSS radial-gradient）",
+                "セクション区切りにエレガントなピクセルアートボーダー"
+            ],
+            "layoutChanges": [
+                "ナビゲーション: backdrop-filter: blur(20px) のフロストガラス効果",
+                "ヒーロー: CRTフレーム装飾、ゴールド系グロー",
+                "カード: ゴールドアクセントのボーダーとシャドウ",
+                "ボタン: linear-gradient(180deg, #FFD700, #DAA520) のメタリック効果"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Synthwave Sunset",
+            "nameJa": "シンセウェーブサンセット",
+            "mockup": "02_synthwave.png",
+            "concept": "80年代のアーケードゲームとヴェイパーウェーブの美学を融合。ネオンに輝く夕焼けの都市景観が映像制作会社としてのクリエイティブな世界観を表現。",
+            "atmosphere": "華やか・ポップ",
+            "gameFeeling": 4,
+            "luxuryFeeling": 4,
+            "implementationDifficulty": 3,
+            "cssVariables": {
+                "--bg": "#1a0533",
+                "--bg-elevated": "#250845",
+                "--bg-card": "rgba(30, 10, 60, 0.8)",
+                "--text": "#f0e6ff",
+                "--text-muted": "#b89ce0",
+                "--text-dim": "#7a5ea0",
+                "--accent": "#ff006e",
+                "--accent2": "#ff8c00",
+                "--accent3": "#00d4ff",
+                "--accent-glow": "rgba(255, 0, 110, 0.4)",
+                "--accent2-glow": "rgba(255, 140, 0, 0.4)",
+                "--accent3-glow": "rgba(0, 212, 255, 0.4)",
+                "--border": "#ff006e",
+                "--border-dim": "#3a1855",
+                "--radius": "0px",
+                "--shadow": "4px 4px 0px rgba(255, 0, 110, 0.3)",
+                "--shadow-lg": "6px 6px 0px rgba(255, 0, 110, 0.4)"
+            },
+            "fonts": {
+                "heading": "\"DotGothic16\", monospace",
+                "body": "\"Noto Sans JP\", sans-serif",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "サンセットグラデーション背景: linear-gradient(180deg, #1a0533 0%, #ff006e 60%, #ff8c00 100%)",
+                "ピクセルアート都市景観シルエット（SVGまたはCSS）",
+                "パースペクティブグリッド: perspective(500px) + CSS grid lines",
+                "ホログラフィック半透明カードパネル",
+                "クロムベゼルのアーケードボタン",
+                "ネオンボーダーアニメーション"
+            ],
+            "layoutChanges": [
+                "ヒーロー: 全画面サンセットグラデーション + 都市景観",
+                "カード: backdrop-filter + ネオンボーダー",
+                "ナビ: レトロウェーブスタイル水平メニュー",
+                "フッター: シルエット都市景観前面配置"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Pixel Art Museum",
+            "nameJa": "ピクセルアートミュージアム",
+            "mockup": "03_pixelmuseum.png",
+            "concept": "ピクセルアートを美術館のアート作品として展示するミニマリスト×ギャラリー空間。制作実績を芸術的に引き立てるデザイン。",
+            "atmosphere": "ミニマル・洗練",
+            "gameFeeling": 3,
+            "luxuryFeeling": 5,
+            "implementationDifficulty": 4,
+            "cssVariables": {
+                "--bg": "#0e0e12",
+                "--bg-elevated": "#141418",
+                "--bg-card": "#1a1a1e",
+                "--text": "#e8e8ec",
+                "--text-muted": "#8888a0",
+                "--text-dim": "#555568",
+                "--accent": "#00F5FF",
+                "--accent2": "#FF6B6B",
+                "--accent3": "#B8FF5A",
+                "--accent-glow": "rgba(0, 245, 255, 0.3)",
+                "--accent2-glow": "rgba(255, 107, 107, 0.3)",
+                "--accent3-glow": "rgba(184, 255, 90, 0.3)",
+                "--border": "#2a2a32",
+                "--border-dim": "#1e1e24",
+                "--radius": "2px",
+                "--shadow": "0 4px 20px rgba(0, 0, 0, 0.3)",
+                "--shadow-lg": "0 8px 40px rgba(0, 0, 0, 0.4)"
+            },
+            "fonts": {
+                "heading": "\"DotGothic16\", monospace",
+                "body": "\"Inter\", \"Noto Sans JP\", sans-serif",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "サイドレールナビゲーション（左固定サイドバー）",
+                "メイソンリーグリッドレイアウト for Works",
+                "アイソメトリックピクセルアートのヒーローシーン",
+                "精緻なピクセルアートアイコン（絵文字を置き換え）",
+                "繊細なドットマトリクスオーバーレイ: opacity 0.02",
+                "ジェネラスな余白（section padding 倍増）",
+                "カードにインナーグロー: box-shadow inset"
+            ],
+            "layoutChanges": [
+                "ナビ: 水平→サイドレール（左固定、200px幅）",
+                "ヒーロー: 中央配置のアイソメトリックアートシーン",
+                "Works: グリッド→メイソンリー（CSS columns）",
+                "カード: border-radius: 2px, 繊細なインナーグロー",
+                "全セクション: padding を 1.5 倍に拡大"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Neo-Tokyo Terminal",
+            "nameJa": "ネオ東京ターミナル",
+            "mockup": "04_neotokyo.png",
+            "concept": "SF映画のコマンドターミナルとレトロPC端末を融合。洗練されたUI設計でプロフェッショナルなテクノロジー企業の印象を与える。",
+            "atmosphere": "クール・テック",
+            "gameFeeling": 4,
+            "luxuryFeeling": 4,
+            "implementationDifficulty": 3,
+            "cssVariables": {
+                "--bg": "#0a0e1a",
+                "--bg-elevated": "#0f1425",
+                "--bg-card": "#121830",
+                "--text": "#e0e8f0",
+                "--text-muted": "#7888a0",
+                "--text-dim": "#4a5a70",
+                "--accent": "#33ff33",
+                "--accent2": "#FFA500",
+                "--accent3": "#FF3333",
+                "--accent-glow": "rgba(51, 255, 51, 0.35)",
+                "--accent2-glow": "rgba(255, 165, 0, 0.35)",
+                "--accent3-glow": "rgba(255, 51, 51, 0.35)",
+                "--border": "#33ff33",
+                "--border-dim": "#1a2a1a",
+                "--radius": "0px",
+                "--shadow": "0 2px 10px rgba(51, 255, 51, 0.1)",
+                "--shadow-lg": "0 4px 20px rgba(51, 255, 51, 0.15)"
+            },
+            "fonts": {
+                "heading": "\"JetBrains Mono\", \"DotGothic16\", monospace",
+                "body": "\"JetBrains Mono\", \"Noto Sans JP\", monospace",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "フルスクリーンターミナルウィンドウ風ヒーロー",
+                "タイピングアニメーション（TypewriterEffect）",
+                "ターミナルタブスタイルナビ（タブバー風）",
+                "弁当グリッド（Bento Grid）レイアウトのサービスカード",
+                "サイドパネルにデコレーティブデータビジュアライゼーション",
+                "ASCII枠線ボーダー",
+                "モノスペースフォント階層",
+                "モダンなアンチエイリアス処理のグリーン蛍光体"
+            ],
+            "layoutChanges": [
+                "ナビ: タブバー風ターミナルタブ",
+                "ヒーロー: ターミナルウィンドウ（タイトルバー付き）",
+                "サービスカード: 等分グリッド→弁当グリッド（不均等サイズ）",
+                "装飾: サイドにダミーデータのビジュアライゼーション"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Arcade Luxury",
+            "nameJa": "アーケードラグジュアリー",
+            "mockup": "05_arcadeluxury.png",
+            "concept": "高級アーケード筐体のエレガンスを再現。ジュエルトーンの配色とネオンサインの光沢感で遊び心のあるハイエンドクリエイティブを表現。",
+            "atmosphere": "ゴージャス",
+            "gameFeeling": 5,
+            "luxuryFeeling": 5,
+            "implementationDifficulty": 4,
+            "cssVariables": {
+                "--bg": "#050508",
+                "--bg-elevated": "#0a0a18",
+                "--bg-card": "#12123a",
+                "--text": "#f0f0ff",
+                "--text-muted": "#a0a0c0",
+                "--text-dim": "#606080",
+                "--accent": "#50C878",
+                "--accent2": "#0F52BA",
+                "--accent3": "#E0115F",
+                "--accent-glow": "rgba(0, 255, 100, 0.3)",
+                "--accent2-glow": "rgba(15, 82, 186, 0.3)",
+                "--accent3-glow": "rgba(224, 17, 95, 0.3)",
+                "--border": "#50C878",
+                "--border-dim": "#1a1a3e",
+                "--radius": "0px",
+                "--shadow": "4px 4px 0px rgba(0, 0, 0, 0.8)",
+                "--shadow-lg": "0 10px 40px rgba(0, 0, 0, 0.6)"
+            },
+            "fonts": {
+                "heading": "\"DotGothic16\", monospace",
+                "body": "\"Noto Sans JP\", sans-serif",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "グラデーションメッシュ背景（エメラルド・サファイア・ルビー）",
+                "多層ネオングロー: text-shadow 3レイヤー（緑外周・白内側）",
+                "各サービスカードに異なるジュエルトーンアクセント",
+                "サムネイル画像付きカード（カルーセルスタイル）",
+                "磨き上げたアーケードボタン: radial-gradient + ring border",
+                "セクション角にピクセルアートコーナー装飾",
+                "カードホバー時のジュエルグロー拡大"
+            ],
+            "layoutChanges": [
+                "ヒーロー: フルブリードグラデーションメッシュ背景",
+                "サービス: 横スクロールカルーセル風、大サムネイル",
+                "ボタン: border-radius: 50% のアーケードボタン（CTA）+ 通常ボタン0px",
+                "各カード: 個別のジュエルトーン::before装飾バー"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "RPG Quest",
+            "nameJa": "RPGクエスト",
+            "mockup": "06_rpgquest.png",
+            "concept": "RPGゲームのUIを全面採用。ユーザーがクエストを受ける感覚でサービスを探索。ファンタジーとテクノロジーの交差点。",
+            "atmosphere": "遊び心全開",
+            "gameFeeling": 5,
+            "luxuryFeeling": 3,
+            "implementationDifficulty": 5,
+            "cssVariables": {
+                "--bg": "#0a1a0a",
+                "--bg-elevated": "#121e12",
+                "--bg-card": "#1a2a1a",
+                "--text": "#e8e0c8",
+                "--text-muted": "#a09878",
+                "--text-dim": "#706848",
+                "--accent": "#DAA520",
+                "--accent2": "#6A0DAD",
+                "--accent3": "#50C878",
+                "--accent-glow": "rgba(218, 165, 32, 0.4)",
+                "--accent2-glow": "rgba(106, 13, 173, 0.4)",
+                "--accent3-glow": "rgba(80, 200, 120, 0.4)",
+                "--border": "#DAA520",
+                "--border-dim": "#2a2010",
+                "--radius": "0px",
+                "--shadow": "4px 4px 0px rgba(218, 165, 32, 0.3)",
+                "--shadow-lg": "6px 6px 0px rgba(218, 165, 32, 0.4)"
+            },
+            "fonts": {
+                "heading": "\"DotGothic16\", monospace",
+                "body": "\"DotGothic16\", \"Noto Sans JP\", monospace",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "RPGタイトル画面風ヒーロー＋オーネイトピクセルボーダー",
+                "ピクセルアートキャラクターイラスト",
+                "RPGメニュー風ナビゲーション（▸カーソルアニメ）",
+                "ステータスカード風サービスカード（HP/MPバー）",
+                "progress要素で能力ゲージを表現",
+                "宝箱・歯車のピクセルアート装飾",
+                "パーチメントテクスチャオーバーレイ"
+            ],
+            "layoutChanges": [
+                "ナビ: RPGコマンドメニュー風（縦or横）",
+                "ヒーロー: タイトル画面＋キャラクター + 「クエストを開始」ボタン",
+                "サービスカード: HP/MPバー付きステータスカード",
+                "セクション区切り: オーネイトピクセルフレーム"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Hologram Interface",
+            "nameJa": "ホログラムインターフェース",
+            "mockup": "07_hologram.png",
+            "concept": "ホログラフィックプロジェクションをモチーフにした近未来レトロUI。色収差エフェクトで映像制作会社らしい映像的な演出。",
+            "atmosphere": "近未来",
+            "gameFeeling": 3,
+            "luxuryFeeling": 5,
+            "implementationDifficulty": 4,
+            "cssVariables": {
+                "--bg": "#050510",
+                "--bg-elevated": "#0a0a1e",
+                "--bg-card": "rgba(15, 15, 40, 0.6)",
+                "--text": "#e0e8ff",
+                "--text-muted": "#8090c0",
+                "--text-dim": "#4a5580",
+                "--accent": "#B0E0FF",
+                "--accent2": "#8B5CF6",
+                "--accent3": "#FF6B9D",
+                "--accent-glow": "rgba(176, 224, 255, 0.3)",
+                "--accent2-glow": "rgba(139, 92, 246, 0.3)",
+                "--accent3-glow": "rgba(255, 107, 157, 0.3)",
+                "--border": "rgba(176, 224, 255, 0.3)",
+                "--border-dim": "rgba(176, 224, 255, 0.1)",
+                "--radius": "8px",
+                "--shadow": "0 0 30px rgba(176, 224, 255, 0.1)",
+                "--shadow-lg": "0 0 60px rgba(176, 224, 255, 0.15)"
+            },
+            "fonts": {
+                "heading": "\"DotGothic16\", monospace",
+                "body": "\"Inter\", \"Noto Sans JP\", sans-serif",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "ホログラフィック投影アニメーション: @keyframes holoProject",
+                "色収差テキスト: text-shadow with RGB offset",
+                "透過ガラス風カード: backdrop-filter + レインボー屈折ボーダー",
+                "浮遊ホログラムタブナビ",
+                "ヘキサゴナルグリッドパターン背景",
+                "グリッチホバーエフェクト: @keyframes glitch",
+                "浮遊ピクセルパーティクル: CSS animation",
+                "border-radius: 8px（角丸追加で未来感）"
+            ],
+            "layoutChanges": [
+                "全体: border-radius: 8px に変更（ピクセル感を残しつつ柔らかく）",
+                "ヒーロー: ホログラム投影エフェクト + 3D浮遊テキスト",
+                "カード: 半透明ガラスカード + レインボーグラデーションボーダー",
+                "ナビ: 浮遊するタブ（gap拡大、hover時グロー拡大）"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Game Over Screen",
+            "nameJa": "ゲームオーバースクリーン",
+            "mockup": "08_gameover.png",
+            "concept": "ハイスコア画面・INSERT COIN画面などゲームのアイコニックなシーンを洗練された形でオマージュ。ポップでありながらシャープ。",
+            "atmosphere": "ポップ・シャープ",
+            "gameFeeling": 5,
+            "luxuryFeeling": 4,
+            "implementationDifficulty": 3,
+            "cssVariables": {
+                "--bg": "#0a0a0a",
+                "--bg-elevated": "#111111",
+                "--bg-card": "#1a1a1a",
+                "--text": "#f0f0f0",
+                "--text-muted": "#a0a0a0",
+                "--text-dim": "#606060",
+                "--accent": "#FF1493",
+                "--accent2": "#ADFF2F",
+                "--accent3": "#00BFFF",
+                "--accent-glow": "rgba(255, 20, 147, 0.4)",
+                "--accent2-glow": "rgba(173, 255, 47, 0.4)",
+                "--accent3-glow": "rgba(0, 191, 255, 0.4)",
+                "--border": "#FF1493",
+                "--border-dim": "#2a1520",
+                "--radius": "0px",
+                "--shadow": "4px 4px 0px rgba(255, 20, 147, 0.3)",
+                "--shadow-lg": "6px 6px 0px rgba(255, 20, 147, 0.4)"
+            },
+            "fonts": {
+                "heading": "\"DotGothic16\", monospace",
+                "body": "\"Noto Sans JP\", sans-serif",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "ハイスコアエントリー画面風ヒーロー",
+                "LED/セグメントディスプレイ風テキスト",
+                "ステージセレクト画面風サービスレイアウト（番号付き）",
+                "ダブルラインボーダー: border + outline の二重枠",
+                "INSERT COINプロンプトアニメーション: @keyframes blink",
+                "スコアカウンター装飾",
+                "プレミアム浮遊パネル（デプスシャドウ）"
+            ],
+            "layoutChanges": [
+                "ヒーロー: HIGH SCORE表示 + 会社名 = 1位スコア演出",
+                "サービス: ステージセレクト画面（番号 + サムネイル + 概要）",
+                "ボーダー: border 3px + outline 1px offset 3px のダブルライン",
+                "色: ピンク×ライムのビビッドコンビネーション"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Space Constellation",
+            "nameJa": "スペースコンステレーション",
+            "mockup": "09_constellation.png",
+            "concept": "宇宙空間×レトロゲーム。星座の線でページ要素をつなぎ、ナビゲーション自体がインタラクティブな宇宙探索に。",
+            "atmosphere": "壮大・ドラマチック",
+            "gameFeeling": 4,
+            "luxuryFeeling": 4,
+            "implementationDifficulty": 5,
+            "cssVariables": {
+                "--bg": "#030308",
+                "--bg-elevated": "#0a0a15",
+                "--bg-card": "#101020",
+                "--text": "#F0F0FF",
+                "--text-muted": "#8888b0",
+                "--text-dim": "#555578",
+                "--accent": "#008B8B",
+                "--accent2": "#FF6347",
+                "--accent3": "#FFD700",
+                "--accent-glow": "rgba(0, 139, 139, 0.4)",
+                "--accent2-glow": "rgba(255, 99, 71, 0.4)",
+                "--accent3-glow": "rgba(255, 215, 0, 0.4)",
+                "--border": "#008B8B",
+                "--border-dim": "#1a1a2a",
+                "--radius": "50%",
+                "--shadow": "0 0 20px rgba(0, 139, 139, 0.2)",
+                "--shadow-lg": "0 0 40px rgba(0, 139, 139, 0.3)"
+            },
+            "fonts": {
+                "heading": "\"DotGothic16\", monospace",
+                "body": "\"Inter\", \"Noto Sans JP\", sans-serif",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "ピクセルアート惑星/月のヒーローイラスト",
+                "星座マップ風ナビ: SVG path + circle でノードをつなぐ",
+                "宇宙ステーション/衛星風カード + 軌道リング: border-radius + rotate animation",
+                "パララックス星層: multiple background layers with different scroll speeds",
+                "星雲カラーウォッシュ: radial-gradient multiple layers",
+                "ピクセルアートロケット・小惑星装飾",
+                "コンステレーションライン接続（SVG animated paths）"
+            ],
+            "layoutChanges": [
+                "ナビ: 星座マップ（SVGベースの特殊レイアウト）",
+                "ヒーロー: 中央に惑星 + テキストが軌道を回る",
+                "カード: 円形/楕円形のステーション風 + 軌道の環",
+                "背景: 多層パララックススターフィールド"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Glass Pixel",
+            "nameJa": "グラスピクセル",
+            "mockup": "10_glasspixel.png",
+            "concept": "モダンなグラスモーフィズムとレトロピクセルを融合。現代的な高級感とレトロなノスタルジーの完璧な中間点。",
+            "atmosphere": "バランス型",
+            "gameFeeling": 3,
+            "luxuryFeeling": 5,
+            "implementationDifficulty": 3,
+            "cssVariables": {
+                "--bg": "#0f0f23",
+                "--bg-elevated": "#161633",
+                "--bg-card": "rgba(26, 26, 46, 0.6)",
+                "--text": "#f0f0ff",
+                "--text-muted": "#a0a0c8",
+                "--text-dim": "#606088",
+                "--accent": "#00D9A6",
+                "--accent2": "#B794F6",
+                "--accent3": "#F472B6",
+                "--accent-glow": "rgba(0, 217, 166, 0.3)",
+                "--accent2-glow": "rgba(183, 148, 246, 0.3)",
+                "--accent3-glow": "rgba(244, 114, 182, 0.3)",
+                "--border": "rgba(0, 217, 166, 0.3)",
+                "--border-dim": "rgba(255, 255, 255, 0.06)",
+                "--radius": "16px",
+                "--shadow": "0 8px 32px rgba(0, 0, 0, 0.3)",
+                "--shadow-lg": "0 16px 64px rgba(0, 0, 0, 0.4)"
+            },
+            "fonts": {
+                "heading": "\"DotGothic16\", monospace",
+                "body": "\"Inter\", \"Noto Sans JP\", sans-serif",
+                "accent": "\"DotGothic16\", monospace"
+            },
+            "designFeatures": [
+                "フロストガラスパネル: backdrop-filter: blur(20px) + semi-transparent bg",
+                "ピクセルフォント見出し + モダンサンセリフ本文のデュアルフォント",
+                "ガラスモーフィックパネル: カラーグラデーションボーダー (border-image)",
+                "浮遊ピクセルパーティクル: ガラス越しに屈折して見える",
+                "サブタイルノイズテクスチャ: background-image SVG noise",
+                "border-radius: 16px（大胆な角丸でモダン感）",
+                "パステル系マルチカラーアクセント（ミント・ラベンダー・ローズ）",
+                "ピクセルアートアイコンをガラスカード内に配置"
+            ],
+            "layoutChanges": [
+                "全体: border-radius: 16px に変更",
+                "ナビ: フロストガラスピルボタン",
+                "ヒーロー: 大型フロストガラスパネル中央配置",
+                "カード: グラスモーフィック + グラデーションボーダー",
+                "色: グリーン系→ミント・ラベンダー・ローズのパステル3色"
+            ]
+        }
+    ]
+}
