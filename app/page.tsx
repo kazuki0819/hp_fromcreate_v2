@@ -1,61 +1,57 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { staticWorks, staticBlogPosts } from '@/lib/static-data';
 import WorkCard from '@/components/WorkCard';
 import RetroEffects from '@/components/RetroEffects';
 
-/* Pixel Art SVG Icons */
+/* Pixel Art SVG Icons - Large */
 const PixelCamera = () => (
-  <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
-    <rect x="4" y="8" width="24" height="18" rx="0" fill="var(--accent)" opacity="0.15"/>
-    <path d="M4 8h24v18H4V8zm2 2v14h20V10H6zm4-4h8v4H10V6z" fill="var(--accent)"/>
-    <rect x="13" y="14" width="6" height="6" fill="var(--accent2)"/>
-    <rect x="15" y="16" width="2" height="2" fill="var(--accent)"/>
+  <svg viewBox="0 0 64 64" width="64" height="64" fill="none">
+    <rect x="8" y="16" width="48" height="36" fill="var(--accent)" opacity="0.08"/>
+    <path d="M8 16h48v36H8V16zm4 4v28h40V20H12z" fill="var(--accent)" opacity="0.8"/>
+    <rect x="20" y="8" width="16" height="8" fill="var(--accent)" opacity="0.6"/>
+    <rect x="24" y="28" width="16" height="16" rx="0" fill="var(--accent)" opacity="0.3"/>
+    <rect x="28" y="32" width="8" height="8" fill="var(--accent2)"/>
+    <rect x="31" y="35" width="2" height="2" fill="#fff"/>
+    <rect x="44" y="22" width="6" height="4" fill="var(--accent2)" opacity="0.5"/>
+    <rect x="12" y="22" width="4" height="4" fill="var(--accent3)" opacity="0.4"/>
   </svg>
 );
 
 const PixelPhone = () => (
-  <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
-    <rect x="8" y="2" width="16" height="28" rx="0" fill="var(--accent)" opacity="0.15"/>
-    <path d="M8 2h16v28H8V2zm2 2v24h12V4H10z" fill="var(--accent)"/>
-    <rect x="12" y="6" width="8" height="14" fill="var(--accent2)" opacity="0.3"/>
-    <rect x="14" y="24" width="4" height="2" fill="var(--accent2)"/>
-    <rect x="13" y="8" width="2" height="2" fill="var(--accent)"/>
-    <rect x="17" y="8" width="2" height="2" fill="var(--accent3)"/>
+  <svg viewBox="0 0 64 64" width="64" height="64" fill="none">
+    <rect x="16" y="4" width="32" height="56" fill="var(--accent4)" opacity="0.08"/>
+    <path d="M16 4h32v56H16V4zm4 4v48h24V8H20z" fill="var(--accent4)" opacity="0.8"/>
+    <rect x="22" y="12" width="20" height="32" fill="var(--accent4)" opacity="0.15"/>
+    <rect x="26" y="16" width="4" height="4" fill="var(--accent)" opacity="0.6"/>
+    <rect x="32" y="16" width="4" height="4" fill="var(--accent2)" opacity="0.6"/>
+    <rect x="38" y="16" width="4" height="4" fill="var(--accent3)" opacity="0.6"/>
+    <rect x="26" y="24" width="12" height="8" fill="var(--accent4)" opacity="0.3"/>
+    <rect x="26" y="34" width="12" height="4" fill="var(--accent4)" opacity="0.2"/>
+    <rect x="28" y="50" width="8" height="4" rx="0" fill="var(--accent4)" opacity="0.5"/>
   </svg>
 );
 
 const PixelCommunity = () => (
-  <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
-    <rect x="12" y="4" width="8" height="8" rx="0" fill="var(--accent)" opacity="0.15"/>
-    <path d="M14 4h4v4h-4V4zm-2 2h2v2h-2V6zm6 0h2v2h-2V6z" fill="var(--accent)"/>
-    <rect x="4" y="14" width="8" height="8" fill="var(--accent2)" opacity="0.15"/>
-    <path d="M6 14h4v4H6v-4zm-2 2h2v2H4v-2zm6 0h2v2h-2v-2z" fill="var(--accent2)"/>
-    <rect x="20" y="14" width="8" height="8" fill="var(--accent3)" opacity="0.15"/>
-    <path d="M22 14h4v4h-4v-4zm-2 2h2v2h-2v-2zm6 0h2v2h-2v-2z" fill="var(--accent3)"/>
-    <path d="M10 24h12v4H10v-4z" fill="var(--accent)" opacity="0.4"/>
-    <path d="M8 26h2v2H8zm14 0h2v2h-2z" fill="var(--accent)" opacity="0.3"/>
-  </svg>
-);
-
-/* Isometric Cube Decorations */
-const IsoCube = ({ color = "var(--accent)", size = 40, x = 0, y = 0, delay = 0 }: { color?: string; size?: number; x?: number; y?: number; delay?: number }) => (
-  <svg
-    viewBox="0 0 40 46"
-    width={size}
-    height={size * 1.15}
-    style={{
-      position: 'absolute',
-      left: `${x}%`,
-      top: `${y}%`,
-      opacity: 0.12,
-      animation: `dotFloat 5s ease-in-out ${delay}s infinite`,
-      pointerEvents: 'none',
-    }}
-  >
-    <polygon points="20,0 40,12 40,34 20,46 0,34 0,12" fill={color} opacity="0.3" />
-    <polygon points="20,0 40,12 20,24 0,12" fill={color} opacity="0.5" />
-    <polygon points="0,12 20,24 20,46 0,34" fill={color} opacity="0.4" />
-    <polygon points="40,12 20,24 20,46 40,34" fill={color} opacity="0.2" />
+  <svg viewBox="0 0 64 64" width="64" height="64" fill="none">
+    {/* Center person */}
+    <rect x="28" y="8" width="8" height="8" fill="var(--accent2)" opacity="0.8"/>
+    <rect x="26" y="16" width="12" height="4" fill="var(--accent2)" opacity="0.6"/>
+    <rect x="28" y="20" width="8" height="8" fill="var(--accent2)" opacity="0.4"/>
+    {/* Left person */}
+    <rect x="8" y="20" width="8" height="8" fill="var(--accent)" opacity="0.8"/>
+    <rect x="6" y="28" width="12" height="4" fill="var(--accent)" opacity="0.6"/>
+    <rect x="8" y="32" width="8" height="8" fill="var(--accent)" opacity="0.4"/>
+    {/* Right person */}
+    <rect x="48" y="20" width="8" height="8" fill="var(--accent3)" opacity="0.8"/>
+    <rect x="46" y="28" width="12" height="4" fill="var(--accent3)" opacity="0.6"/>
+    <rect x="48" y="32" width="8" height="8" fill="var(--accent3)" opacity="0.4"/>
+    {/* Connection lines */}
+    <path d="M20 32h8M36 32h8" stroke="var(--accent4)" strokeWidth="2" opacity="0.4"/>
+    {/* Platform */}
+    <rect x="4" y="44" width="56" height="4" fill="var(--accent)" opacity="0.1"/>
+    <rect x="8" y="48" width="48" height="4" fill="var(--accent)" opacity="0.06"/>
+    <rect x="16" y="52" width="32" height="4" fill="var(--accent)" opacity="0.03"/>
   </svg>
 );
 
@@ -65,85 +61,69 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero - Museum Gallery */}
+      {/* ===== HERO ===== */}
       <section className="hero">
         <RetroEffects />
-
-        {/* Floating Isometric Cubes */}
-        <IsoCube color="var(--accent)" size={50} x={8} y={20} delay={0} />
-        <IsoCube color="var(--accent2)" size={35} x={85} y={15} delay={1} />
-        <IsoCube color="var(--accent3)" size={28} x={15} y={70} delay={2} />
-        <IsoCube color="var(--accent)" size={42} x={78} y={65} delay={0.5} />
-        <IsoCube color="var(--accent2)" size={22} x={50} y={85} delay={1.5} />
-        <IsoCube color="var(--accent3)" size={32} x={92} y={45} delay={2.5} />
-        <IsoCube color="var(--accent)" size={26} x={3} y={50} delay={3} />
-
-        <div className="hero-content fade-up is-visible">
-          <div className="hero-exhibit-label">
-            <span className="exhibit-number">EXH.001</span>
-            <span className="exhibit-divider">|</span>
-            <span>映像 × SNS × コミュニティで可能性を最大化</span>
+        <div className="hero-layout">
+          <div className="hero-text">
+            <div className="hero-exhibit-label">
+              <span className="exhibit-number">EXH.001</span>
+              <span className="exhibit-divider">|</span>
+              <span>映像 × SNS × コミュニティ</span>
+            </div>
+            <h1>PIXEL ART MUSEUM:<br/>Crafting Digital Wonders</h1>
+            <p className="hero-note">
+              「やりたい」「こうなりたい」という理想を<br />
+              映像と仕組みの力で、現実に変えていく。
+            </p>
+            <div className="hero-cta">
+              <Link href="/contact" className="btn btn-primary">お問い合わせ</Link>
+              <Link href="/works" className="btn btn-secondary">Tour Our Work →</Link>
+            </div>
           </div>
-          <h1>理想を、現実に。</h1>
-          <p className="hero-note">
-            「やりたい」「こうなりたい」という理想を<br />
-            映像と仕組みの力で、現実に変えていく。
-          </p>
-          <div className="hero-cta">
-            <Link href="/contact" className="btn btn-primary">お問い合わせ</Link>
-            <Link href="/works" className="btn btn-secondary">Gallery →</Link>
+          <div className="hero-illustration">
+            <Image
+              src="/images/hero-isometric.png"
+              alt="FROM CREATE Creative Workspace"
+              width={520}
+              height={520}
+              priority
+            />
           </div>
         </div>
-
-        {/* Grid Frame */}
-        <div className="hero-frame" />
       </section>
 
-      {/* Exhibition 01 - Service */}
+      {/* ===== OUR SERVICES ===== */}
       <section className="section">
         <div className="container">
           <header className="section-header fade-up is-visible">
             <p className="section-kicker">EXHIBITION 01</p>
-            <h2>Service</h2>
+            <h2>Our Services</h2>
             <p>映像・SNS・コミュニティを通して、人と企業の可能性を最大化します</p>
           </header>
           <div className="museum-grid">
             <article className="museum-card fade-up is-visible">
               <div className="museum-card-frame">
-                <div className="museum-card-icon">
-                  <PixelCamera />
-                </div>
-                <div className="museum-card-plate">
-                  <span className="plate-number">001</span>
-                </div>
+                <div className="museum-card-icon"><PixelCamera /></div>
+                <div className="museum-card-plate"><span className="plate-number">001</span></div>
               </div>
               <h3>映像制作</h3>
               <p>PR動画・アニメーション・YouTube・SNS縦型動画・MV・広告動画など、目的・ターゲット・活用シーンを踏まえた提案型の映像制作。</p>
               <Link href="/service/video" className="museum-link">View Details →</Link>
             </article>
-
             <article className="museum-card fade-up is-visible">
               <div className="museum-card-frame">
-                <div className="museum-card-icon">
-                  <PixelPhone />
-                </div>
-                <div className="museum-card-plate">
-                  <span className="plate-number">002</span>
-                </div>
+                <div className="museum-card-icon"><PixelPhone /></div>
+                <div className="museum-card-plate"><span className="plate-number">002</span></div>
               </div>
               <h3>SNS運用代行</h3>
               <p>企画・台本制作・撮影・編集・投稿代行・分析まで一貫して対応。成果につながるSNS運用を実現します。</p>
               <Link href="/service/sns" className="museum-link">View Details →</Link>
             </article>
-
             <article className="museum-card fade-up is-visible">
               <div className="museum-card-frame">
-                <div className="museum-card-icon">
-                  <PixelCommunity />
-                </div>
-                <div className="museum-card-plate">
-                  <span className="plate-number">003</span>
-                </div>
+                <div className="museum-card-icon"><PixelCommunity /></div>
+                <div className="museum-card-plate"><span className="plate-number">003</span></div>
               </div>
               <h3>コミュニティ &amp; スクール</h3>
               <p>動画編集者向けコミュニティ運営とAfter Effectsスクール。案件獲得・スキルアップ・横のつながりを提供します。</p>
@@ -156,12 +136,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Exhibition 02 - Works Gallery */}
+      {/* ===== PORTFOLIO HIGHLIGHTS ===== */}
       <section id="works" className="section" style={{ background: 'var(--bg-elevated)' }}>
         <div className="container">
           <header className="section-header fade-up is-visible">
             <p className="section-kicker">EXHIBITION 02</p>
-            <h2>Gallery</h2>
+            <h2>Portfolio Highlights</h2>
             <p>これまで手がけた映像制作の一部をご紹介します</p>
           </header>
           <div className="works-grid">
@@ -175,11 +155,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Exhibition 03 - Strength */}
+      {/* ===== CREATIVE PROCESS ===== */}
       <section className="section">
         <div className="container">
           <header className="section-header fade-up is-visible">
             <p className="section-kicker">EXHIBITION 03</p>
+            <h2>Creative Process</h2>
+            <p>プロジェクトの進め方</p>
+          </header>
+          <div className="process-flow fade-up is-visible">
+            <div className="process-step">
+              <div className="process-icon">🎯</div>
+              <h4>ACCESS</h4>
+              <p>ヒアリング・要件定義</p>
+            </div>
+            <span className="process-arrow">→</span>
+            <div className="process-step">
+              <div className="process-icon">📋</div>
+              <h4>PLANNING</h4>
+              <p>企画・構成・提案</p>
+            </div>
+            <span className="process-arrow">→</span>
+            <div className="process-step">
+              <div className="process-icon">🎬</div>
+              <h4>PRODUCTION</h4>
+              <p>撮影・制作・編集</p>
+            </div>
+            <span className="process-arrow">→</span>
+            <div className="process-step">
+              <div className="process-icon">🚀</div>
+              <h4>PROCESS</h4>
+              <p>納品・運用・改善</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== STRENGTH ===== */}
+      <section className="section" style={{ background: 'var(--bg-elevated)' }}>
+        <div className="container">
+          <header className="section-header fade-up is-visible">
+            <p className="section-kicker">EXHIBITION 04</p>
             <h2>Strength</h2>
             <p>FR0M CREATEの3つの強み</p>
           </header>
@@ -200,12 +216,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Blog */}
+      {/* ===== BLOG ===== */}
       {latestPosts.length > 0 && (
-        <section className="section" style={{ background: 'var(--bg-elevated)' }}>
+        <section className="section">
           <div className="container">
             <header className="section-header fade-up is-visible">
-              <p className="section-kicker">EXHIBITION 04</p>
+              <p className="section-kicker">EXHIBITION 05</p>
               <h2>Blog</h2>
               <p>最新のお知らせ・ブログ記事</p>
             </header>
@@ -220,14 +236,11 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
-            <div style={{ textAlign: 'center', marginTop: '3rem' }} className="fade-up is-visible">
-              <Link href="/blog" className="btn btn-secondary">すべての記事を見る →</Link>
-            </div>
           </div>
         </section>
       )}
 
-      {/* CTA */}
+      {/* ===== CTA ===== */}
       <section className="cta-section">
         <div className="container fade-up is-visible">
           <p className="section-kicker">CONTACT</p>

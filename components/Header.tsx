@@ -1,74 +1,99 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navItems = [
+  { href: "/", label: "MUSEUM", icon: "◈" },
+  { href: "/service", label: "SERVICES", icon: "◆" },
+  { href: "/works", label: "PORTFOLIO", icon: "◆" },
+  { href: "/about", label: "ABOUT", icon: "◆" },
+  { href: "/flow-price", label: "FLOW & PRICE", icon: "◆" },
+  { href: "/faq", label: "FAQ", icon: "◆" },
+  { href: "/blog", label: "BLOG", icon: "◆" },
+  { href: "/contact", label: "CONTACT", icon: "◆" },
+];
 
 export default function Header() {
-    const pathname = usePathname();
-    const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
-    const links = [
-        { href: '/', label: 'Top' },
-        { href: '/service', label: 'Service' },
-        { href: '/works', label: 'Works' },
-        { href: '/about', label: 'About' },
-        { href: '/flow-price', label: 'Flow & Price' },
-        { href: '/faq', label: 'FAQ' },
-        { href: '/blog', label: 'Blog' },
-        { href: '/contact', label: 'Contact' },
-    ];
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
-    // Retro typing effect for logo
-    const [logoText, setLogoText] = useState('');
-    const [showCursor, setShowCursor] = useState(true);
-    const fullText = 'FROM CREATE';
+  return (
+    <>
+      {/* Desktop Side Rail */}
+      <nav className={`side-rail ${isCollapsed ? "collapsed" : ""}`} aria-label="メインナビゲーション">
+        <div className="side-rail-logo">
+          <Link href="/">
+            <span className="logo-icon">⬢</span>
+            {!isCollapsed && <span className="logo-text">FROM<br/>CREATE</span>}
+          </Link>
+        </div>
 
-    useEffect(() => {
-        let i = 0;
-        const timer = setInterval(() => {
-            if (i <= fullText.length) {
-                setLogoText(fullText.slice(0, i));
-                i++;
-            } else {
-                clearInterval(timer);
-                setTimeout(() => setShowCursor(false), 2000);
-            }
-        }, 80);
-        return () => clearInterval(timer);
-    }, []);
+        <ul className="side-rail-nav">
+          {navItems.map(({ href, label, icon }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className={`side-rail-link ${pathname === href ? "active" : ""}`}
+                aria-current={pathname === href ? "page" : undefined}
+              >
+                <span className="rail-icon">{icon}</span>
+                {!isCollapsed && <span className="rail-label">{label}</span>}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-    return (
-        <header className="header">
-            <div className="container">
-                <Link href="/" className="logo">
-                    {logoText}
-                    {showCursor && <span style={{ animation: 'blink 0.5s steps(2) infinite' }}>█</span>}
-                </Link>
-                <nav className={`nav ${menuOpen ? 'open' : ''}`} id="mainNav">
-                    {links.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            aria-current={pathname === link.href ? 'page' : undefined}
-                            onClick={() => setMenuOpen(false)}
-                        >
-                            {link.label}
-                        </Link>
-                    ))}
-                </nav>
-                <button
-                    id="navToggle"
-                    aria-label={menuOpen ? 'メニューを閉じる' : 'メニューを開く'}
-                    aria-expanded={menuOpen}
-                    aria-controls="mainNav"
-                    onClick={() => setMenuOpen(!menuOpen)}
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </header>
-    );
+        {!isCollapsed && (
+          <div className="side-rail-footer">
+            <Link href="/contact" className="rail-cta-btn">
+              EXPLORE EXHIBITS
+            </Link>
+          </div>
+        )}
+
+        <button
+          className="rail-collapse-btn"
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          aria-label={isCollapsed ? "ナビを展開" : "ナビを折りたたむ"}
+        >
+          {isCollapsed ? "▸" : "◂"}
+        </button>
+      </nav>
+
+      {/* Mobile Top Header */}
+      <header className="mobile-header">
+        <div className="mobile-header-inner">
+          <Link href="/" className="logo">
+            <span className="logo-icon">⬢</span>
+            <span className="logo-text-inline">FROM CREATE</span>
+          </Link>
+          <button
+            id="navToggle"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-controls="mobileNav"
+            aria-label="メニュー"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+        <div className={`mobile-nav ${isOpen ? "open" : ""}`} id="mobileNav">
+          {navItems.map(({ href, label }) => (
+            <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}>
+              {label}
+            </Link>
+          ))}
+        </div>
+      </header>
+    </>
+  );
 }
